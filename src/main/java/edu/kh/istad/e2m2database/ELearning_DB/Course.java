@@ -68,7 +68,7 @@ public class Course {
     private Category category;
 
     @ManyToOne
-    private Instructure instructor;
+    private instructor instructor;
 
     @OneToMany(mappedBy = "course")
     private List<Enrollment> enrollments;

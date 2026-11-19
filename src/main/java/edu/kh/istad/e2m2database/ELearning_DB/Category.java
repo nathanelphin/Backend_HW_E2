@@ -21,7 +21,7 @@ public class Category {
     @Column(length = 255)
     private String icon;
 
-    @Column(name = "is_deleted", nullable = false)
+    @Column(nullable = false)
     private Boolean isDeleted;
 
     @Column(length = 50, nullable = false)

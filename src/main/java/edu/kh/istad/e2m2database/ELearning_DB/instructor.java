@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "instructor_profiles")
-public class Instructure {
+public class instructor {
 
 
     @Id
@@ -34,6 +34,6 @@ public class Instructure {
     @Column(nullable = false)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "instructure")
+    @OneToMany(mappedBy = "instructor")
     private List<Course> courses;
 }
