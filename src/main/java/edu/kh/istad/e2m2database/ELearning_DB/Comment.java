@@ -1,0 +1,36 @@
+package edu.kh.istad.e2m2database.ELearning_DB;
+
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "comments")
+public class Comment {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column()
+    private LocalDateTime createdAt;
+
+    @Column()
+    private Boolean isDeleted;
+
+    private String text;
+
+    @ManyToOne()
+    private Comment parent;
+
+    @ManyToOne()
+    private Video video;
+}
