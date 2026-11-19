@@ -15,21 +15,21 @@ public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(nullable = false)
     private String duration;
 
-    @Column()
+    @Column(nullable = false)
     private Boolean isDeleted;
 
-    @Column()
+    @Column(nullable = false)
     private Boolean isPublished;
-
+    @Column(nullable = false)
     private String slug;
-
+    @Column(nullable = false)
     private String thumbnail;
-
+    @Column(nullable = false)
     private String title;
-
+    @Column(nullable = false)
     private String youtube;
 
     @ManyToOne()

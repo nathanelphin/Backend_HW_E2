@@ -20,12 +20,12 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column()
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
-    @Column()
+    @Column(nullable = false)
     private Boolean isDeleted;
-
+    @Column(nullable = false)
     private String text;
 
     @ManyToOne()

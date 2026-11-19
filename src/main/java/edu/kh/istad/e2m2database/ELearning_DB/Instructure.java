@@ -15,20 +15,20 @@ public class Instructure {
 
 
     @Id
-    @Column(name = "user_id", nullable = false)
+    @Column(nullable = false)
     private String userId;
-
+    @Column(nullable = false)
     private String biography;
 
-    @Column(name = "facebook_link")
+    @Column(nullable = false)
     private String facebookLink;
 
-    @Column(name = "github_link")
+    @Column(nullable = false)
     private String githubLink;
 
-    @Column(name = "job_title")
+    @Column(nullable = false)
     private String jobTitle;
 
-    @Column(name = "phone_number")
+    @Column(nullable = false)
     private String phoneNumber;
 }

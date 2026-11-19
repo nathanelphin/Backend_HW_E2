@@ -13,19 +13,19 @@ public class Student {
     @Id
     @Column(nullable = false)
     private String userId;
-
+    @Column(nullable = false)
     private String biography;
 
-    @Column()
+    @Column(nullable = false)
     private String facebookLink;
 
-    @Column()
+    @Column(nullable = false)
     private String githubLink;
-
+    @Column(nullable = false)
     private String major;
 
-    @Column()
+    @Column(nullable = false)
     private String phoneNumber;
-
+    @Column(nullable = false)
     private String university;
 }
