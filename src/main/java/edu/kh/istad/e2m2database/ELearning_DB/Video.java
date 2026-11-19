@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -32,7 +34,10 @@ public class Video {
     @Column(nullable = false)
     private String youtube;
 
-    @ManyToOne()
+    @ManyToOne
     private Course course;
+
+    @OneToMany(mappedBy = "video")
+    private List<Comment> comments;
 
 }

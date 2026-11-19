@@ -5,6 +5,8 @@ package edu.kh.istad.e2m2database.ELearning_DB;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,4 +33,7 @@ public class Instructure {
 
     @Column(nullable = false)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "instructure")
+    private List<Course> courses;
 }

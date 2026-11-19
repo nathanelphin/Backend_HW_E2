@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -63,10 +64,16 @@ public class Course {
     @Column(unique = true, nullable = false)
     private LocalDateTime updatedAt;
 
-    @ManyToOne()
+    @ManyToOne
     private Category category;
 
-    @ManyToOne()
+    @ManyToOne
     private Instructure instructor;
+
+    @OneToMany(mappedBy = "course")
+    private List<Enrollment> enrollments;
+
+    @OneToMany(mappedBy = "course")
+    private List<Video> videos;
 
 }

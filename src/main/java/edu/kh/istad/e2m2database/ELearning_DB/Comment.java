@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,9 +29,12 @@ public class Comment {
     @Column(nullable = false)
     private String text;
 
-    @ManyToOne()
+    @ManyToOne
+    private Video video;
+
+    @ManyToOne
     private Comment parent;
 
-    @ManyToOne()
-    private Video video;
+    @OneToMany(mappedBy = "parent")
+    private List<Comment> replies;
 }

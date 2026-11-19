@@ -18,23 +18,22 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "enrolled_at")
+    @Column(nullable = false)
     private LocalDateTime enrolledAt;
 
-    @Column(name = "payment_at")
+    @Column(nullable = false)
     private LocalDateTime paymentAt;
 
-    @Column(name = "payment_method")
+    @Column(nullable = false)
     private String paymentMethod;
 
-    @Column(name = "payment_status")
+    @Column(nullable = false)
     private Boolean paymentStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id")
-    private Course course;
-
-    @ManyToOne()
+    @ManyToOne
     private Student student;
+
+    @ManyToOne
+    private Course course;
 
 }

@@ -2,6 +2,8 @@ package edu.kh.istad.e2m2database.ELearning_DB;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,4 +30,7 @@ public class Student {
     private String phoneNumber;
     @Column(nullable = false)
     private String university;
+
+    @OneToMany(mappedBy = "student")
+    private List<Enrollment> enrollments;
 }
